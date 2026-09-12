@@ -7,7 +7,7 @@
     - name: Copy JAR file to Tomcat
       ansible.builtin.copy:
         src: /var/lib/jenkins/workspace/job1/Application/target/mcapp-1.0.jar
-        dest: /opt/tomcat/webapps/mcapp-1.0.jar
+        dest: /opt/apache-tomcat-9.0.121/webapps/mcapp-1.0.jar
         owner: tomcat
         group: tomcat
         mode: '0644'
