@@ -7,8 +7,8 @@
 
     - name: Copy JAR file to Tomcat
       ansible.builtin.copy:
-        src: /var/lib/jenkins/workspace/job1/Application/target/mcapp-1.0.jar
-        dest: /opt/apache-tomcat-9.0.121/webapps/mcapp-1.0.jar
+        src: /var/lib/jenkins/workspace/job1/Application/target/mcapp-1.0.war
+        dest: /opt/apache-tomcat-9.0.121/webapps/mcapp-1.0.war
         mode: '0644'
 
     - name: Stop Tomcat
