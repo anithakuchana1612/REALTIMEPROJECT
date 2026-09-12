@@ -1,0 +1,20 @@
+---
+- name: Deploy WAR file on Tomcat
+  hosts: webservers
+  become: yes
+
+  tasks:
+
+    - name: Copy WAR file to Tomcat webapps
+      ansible.builtin.copy:
+        src: myapp.war
+        dest: /opt/tomcat/webapps/myapp.war
+        owner: tomcat
+        group: tomcat
+        mode: '0644'
+
+    - name: Restart Tomcat
+      ansible.builtin.systemd:
+        name: tomcat
+        state: restarted
+```
