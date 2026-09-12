@@ -13,8 +13,8 @@
         group: tomcat
         mode: '0644'
 
-    - name: Restart Tomcat
-      ansible.builtin.systemd:
+    - name: Restart tomcat
+      service:
         name: tomcat
         state: restarted
 ```
