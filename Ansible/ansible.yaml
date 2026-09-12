@@ -8,7 +8,7 @@
     - name: Copy WAR file to Tomcat webapps
       ansible.builtin.copy:
         src: mcapp-1.0.jar
-        dest: /opt/tomcat/webapps/mcapp-1.0.jar
+        dest: /opt/apache-tomcat-9.0.121/webapps/mcapp-1.0.jar
         owner: tomcat
         group: tomcat
         mode: '0644'
