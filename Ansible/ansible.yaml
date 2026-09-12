@@ -7,14 +7,14 @@
   tasks:
 
   - name: Copy JAR file to Tomcat
-    ansible.builtin.copy:
-    src: /var/lib/jenkins/workspace/job1/Application/target/mcapp-1.0.jar
-    dest: /opt/tomcat/webapps/mcapp-1.0.jar
-    owner: tomcat
-    group: tomcat
-    mode: '0644'
+      ansible.builtin.copy:
+      src: /var/lib/jenkins/workspace/job1/Application/target/mcapp-1.0.jar
+      dest: /opt/tomcat/webapps/mcapp-1.0.jar
+      owner: tomcat
+      group: tomcat
+      mode: '0644'
 
   - name: Restart Tomcat
-    ansible.builtin.service:
-    name: tomcat
-    state: restarted
+      ansible.builtin.service:
+      name: tomcat
+      state: restarted
