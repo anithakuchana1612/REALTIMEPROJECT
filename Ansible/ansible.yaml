@@ -15,5 +15,9 @@
       ansible.builtin.shell: /opt/apache-tomcat-9.0.121/bin/shutdown.sh
       ignore_errors: yes
 
+    - name: Wait for Tomcat to stop
+      ansible.builtin.pause:
+        seconds: 5
+
     - name: Start Tomcat
       ansible.builtin.shell: /opt/apache-tomcat-9.0.121/bin/startup.sh
