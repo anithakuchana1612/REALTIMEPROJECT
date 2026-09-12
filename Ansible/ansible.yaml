@@ -1,20 +1,20 @@
 ---
 
-- name: Deploy JAR file on Tomcat
+* name: Deploy JAR file on Tomcat
   hosts: webservers
   become: yes
 
   tasks:
 
-  - name: Copy JAR file to Tomcat
+  * name: Copy JAR file to Tomcat
     ansible.builtin.copy:
-      src: /var/lib/jenkins/workspace/job1/Application/target/mcapp-1.0.jar
-      dest: /opt/tomcat/webapps/mcapp-1.0.jar
-      owner: tomcat
-      group: tomcat
-      mode: '0644'
+    src: /var/lib/jenkins/workspace/job1/Application/target/mcapp-1.0.jar
+    dest: /opt/tomcat/webapps/mcapp-1.0.jar
+    owner: tomcat
+    group: tomcat
+    mode: '0644'
 
-  - name: Restart Tomcat
+  * name: Restart Tomcat
     ansible.builtin.service:
-      name: tomcat
-      state: restarted
+    name: tomcat
+    state: restarted
